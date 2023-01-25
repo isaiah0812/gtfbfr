@@ -1,4 +1,6 @@
 import './App.css'
+import content from './assets/content'
+import Tabs from './components/tabs'
 
 function App() {
   return (
@@ -7,7 +9,7 @@ function App() {
         <h1>Picture</h1>
       </div>
       <div className="content-half">
-        <h1 style={{ color: 'var(--tiffany-blue)' }}>Content</h1>
+        <Tabs tabs={content} />
       </div>
     </main>
   )

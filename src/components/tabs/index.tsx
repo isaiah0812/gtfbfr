@@ -9,19 +9,19 @@ type TabsProps = {
 }
 
 export default function Tabs({ tabs }: TabsProps) {
-  const tabNames: string[] = tabs.map(tab => tab.name);
   const [ selected, setSelected ] = useState<Content>(tabs[0])
 
   const tabList: TabListItem[] = tabs.map((tab): TabListItem => {
     return {
       tab: tab.name,
-      onClick: () => setSelected(tab)
+      onClick: () => setSelected(tab),
+      content: tab
     }
   })
 
   return (
     <div className="main-component">
-      <TabList tabs={tabList} />
+      <TabList tabs={tabList} selected={selected} />
       <TabDisplay content={selected} />
     </div>
   )

@@ -1,0 +1,55 @@
+.music-tabs {
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.music-tab {
+  --width-transition: width 0.5s;
+  width: 100%;
+  transition: var(--width-transition);
+  transition-delay: 0.5s;
+}
+
+.music-tab button {
+  width: 100%;
+  cursor: pointer;
+  min-height: 7.5em;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+.music-tab.unselected {
+  width: 0px;
+  transition: var(--width-transition);
+}
+
+.music-tab-player {
+  height: 0px;
+  transition: height 0.5s;
+}
+
+.music-tab-player.open {
+  height: 10em;
+  transition: height 0.5s;
+  transition-delay: 0.5s;
+}
+
+.service-logo {
+  fill: #000000;
+  width: 5em;
+  height: auto;
+  transition: fill 0.3s;
+}
+
+.music-tab:hover .service-logo {
+  fill: #ffffff;
+  transition: fill 0.3s;
+}

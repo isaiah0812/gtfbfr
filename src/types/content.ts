@@ -3,7 +3,6 @@ export default interface Content {
   youtubeId?: string;
   spotifyId?: string;
   appleId?: string;
-  bandcampId?: string;
-  audiomackId?: string;
+  tidalId?: string;
   soundcloudId?: string;
 }

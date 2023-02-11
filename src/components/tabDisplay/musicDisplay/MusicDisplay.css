@@ -1,6 +1,5 @@
 .music-tabs {
   width: 100%;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -52,4 +51,10 @@
 .music-tab:hover .service-logo {
   fill: var(--maximum-yellow-red);
   transition: fill 0.3s;
+}
+
+@media screen and (max-width: 900px) {
+  .service-logo {
+    width: 4em;
+  }
 }

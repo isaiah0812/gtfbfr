@@ -19,3 +19,20 @@ main {
   align-items: center;
   padding: 1%;
 }
+
+@media screen and (max-width: 900px) {
+  #root {
+    height: auto;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  main {
+    flex-wrap: wrap;
+  }
+
+  .content-half {
+    width: 100%;
+    min-height: 100vh;
+  }
+}

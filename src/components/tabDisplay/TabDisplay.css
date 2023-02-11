@@ -23,3 +23,11 @@
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 900px) {
+  .tab-display-canvas.music, .tab-display-canvas.changing.music {
+    overflow: visible;
+    overflow-x: hidden;
+    height: 17.5em;
+  }
+}

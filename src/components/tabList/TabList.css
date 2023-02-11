@@ -70,15 +70,15 @@
 }
 
 .tab-collection.scrollable-left {
-  box-shadow: inset 15px 0 5px -10px #000000aa;
+  box-shadow: inset 15px 0 5px -10px #ffffff44;
 }
 
 .tab-collection.scrollable-right {
-  box-shadow: inset -15px 0 5px -10px #000000aa;
+  box-shadow: inset -15px 0 5px -10px #ffffff44;
 }
 
 .tab-collection.scrollable-both {
-  box-shadow: inset 15px 0 5px -10px #000000aa, inset -15px 0 5px -10px #000000aa;
+  box-shadow: inset 15px 0 5px -10px #ffffff44, inset -15px 0 5px -10px #ffffff44;
 }
 
 .tab-collection::-webkit-scrollbar {

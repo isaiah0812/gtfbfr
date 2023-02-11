@@ -1,6 +1,7 @@
 #root {
   height: 100vh;
-  background-color: var(--maximum-yellow-red);
+  background-color: var(--black);
+  color: var(--white);
   overflow: hidden;
 }
 

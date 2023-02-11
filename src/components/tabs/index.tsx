@@ -9,20 +9,30 @@ type TabsProps = {
 }
 
 export default function Tabs({ tabs }: TabsProps) {
-  const [ selected, setSelected ] = useState<Content>(tabs[0])
+  const [ selected, setSelected ] = useState<Content>(tabs[0]);
+  const [ changing, setChanging ] = useState<boolean>(false);
+  const [ visible, setVisible ] = useState<boolean>(false);
+
+  const handleChange = (tab: Content) => {
+    setChanging(true);
+    setTimeout(() => {
+      setSelected(tab);
+      setChanging(false);
+    }, 500)
+  }
 
   const tabList: TabListItem[] = tabs.map((tab): TabListItem => {
     return {
       tab: tab.name,
-      onClick: () => setSelected(tab),
+      onClick: () => handleChange(tab),
       content: tab
     }
   })
 
   return (
-    <div className="main-component">
+    <div className={`main-component${visible ? ' visible' : ''}`} onLoad={() => setVisible(true)}>
       <TabList tabs={tabList} selected={selected} />
-      <TabDisplay content={selected} />
+      <TabDisplay content={selected} changing={changing} />
     </div>
   )
 }

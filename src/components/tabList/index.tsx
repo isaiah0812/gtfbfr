@@ -11,7 +11,7 @@ type ArrowProps = {
 
 export type TabListItem = {
   tab: string;
-  onClick: () => any;
+  onClick: (...args: any[]) => any | void;
   content?: Content;
 }
 
@@ -47,15 +47,23 @@ export default function TabList({ tabs, selected }: TabListProps) {
     element.scrollTo({ left: element.scrollLeft + 150, behavior: 'smooth' });
   }
 
+  useEffect(() => {
+    const element = tabCollection.current!
+
+    setLeftShadow(!atStart(element));
+    setRightShadow(!atEnd(element));
+  }, [])
+
   return (
     <div className="tab-list">
       <Arrow onClick={scrollLeft} />
-      <div ref={tabCollection} className={`tab-collection scrollable-${leftShadow && rightShadow ? 'both' : (leftShadow ? 'left' : 'right')}`} onScroll={() => {
-        const element = tabCollection.current!
+      <div ref={tabCollection} className={`tab-collection scrollable-${leftShadow && rightShadow ? 'both' : (leftShadow ? 'left' : (rightShadow ? 'right' : ''))}`}
+        onScroll={() => {
+          const element = tabCollection.current!
 
-        setLeftShadow(!atStart(element));
-        setRightShadow(!atEnd(element));
-      }}>
+          setLeftShadow(!atStart(element));
+          setRightShadow(!atEnd(element));
+        }}>
         {tabs.map(tab => (
           <button className={`tab${tab.content === selected ? ' selected' : ''}`} onClick={tab.onClick}>{tab.tab}</button>
         ))}

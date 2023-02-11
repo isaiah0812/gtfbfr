@@ -3,4 +3,10 @@
   flex-direction: column;
   text-align: center;
   width: 100%;
+  opacity: 0;
+}
+
+.main-component.visible {
+  opacity: 1;
+  transition: opacity 1s;
 }

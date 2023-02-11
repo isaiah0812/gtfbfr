@@ -43,13 +43,13 @@
 }
 
 .service-logo {
-  fill: #000000;
+  fill: var(--white);
   width: 5em;
   height: auto;
   transition: fill 0.3s;
 }
 
 .music-tab:hover .service-logo {
-  fill: #ffffff;
+  fill: var(--maximum-yellow-red);
   transition: fill 0.3s;
 }

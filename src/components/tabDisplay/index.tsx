@@ -7,11 +7,12 @@ import SoundcloudDisplay from "./soundcloudDisplay";
 
 type TabDisplayProps = {
   content: Content;
+  changing?: boolean;
 }
 
-export default function TabDisplay({ content }: TabDisplayProps) {
+export default function TabDisplay({ content, changing }: TabDisplayProps) {
   return (
-    <div className="tab-display-canvas">
+    <div className={`tab-display-canvas${changing ? ' changing' : ''}`}>
       <div className="tab-display">
         {isVideo(content) ? (
             <YoutubeDisplay content={content} />

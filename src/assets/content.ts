@@ -7,9 +7,10 @@ const content: Content[] = [
   },
   {
     name: 'Test 2',
-    youtubeId: 'MXXlloCdbHw',
+    youtubeId: '_ljS9_5YKbk',
     spotifyId: '0cLOol1ZQ7ILyluO78oMwi',
     appleId: '1614979061?i=1614979062',
+    tidalId: '221462913'
   },
   {
     name: 'Test 3',

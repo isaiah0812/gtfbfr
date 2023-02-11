@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './MusicDisplay.css';
 import { ReactComponent as AppleMusicLogo } from '../../../assets/logos/appleMusic.svg';
 import { ReactComponent as SoundCloudLogo } from '../../../assets/logos/soundcloud.svg';
@@ -85,6 +85,10 @@ export default function MusicDisplay({ content }: MusicTabDisplayProps) {
   const [ selected, setSelected ] = useState<MusicTabService | null>(null);
 
   const contentProps = Object.keys(content);
+
+  useEffect(() => {
+    setSelected(null);
+  }, [content])
 
   return (
     <div className="music-tabs">
